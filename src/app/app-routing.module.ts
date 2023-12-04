@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'home-adm',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
