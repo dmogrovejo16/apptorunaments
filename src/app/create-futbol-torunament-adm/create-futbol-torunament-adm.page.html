@@ -1,0 +1,54 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+
+<ion-content class="page">
+  <div class="txt">
+    <p >Crea un nuevo torneo de futbol</p>
+   </div> 
+<div class="img">
+  <img class="imagen" src="https://cdni.iconscout.com/illustration/premium/thumb/football-player-scoring-goal-4375047-3637340.png?f=webp" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+      <label class="text" for="torname" >Nombre del Torneo:</label>
+      <input type="text" id="torname" placeholder="Crea un nombre único"  name="torneoName" required>
+  <hr>
+      <label class="text"  for="fechIn">Fecha de inicio:</label>
+      <input type="date" id="fechaInicio" name="fechIn" required>
+
+      <label class="text"  for="fechFin">Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      <hr>
+  
+      <label class="text" id="grades"  for="level">Nivel:</label>
+        <select id="gradesOp">
+          <option   disabled selected>Selecciona el nivel del torneo:</option>
+          <option value="1E1" class="grades" >1ro Bachillerato</option>
+          <option value="1E2" class="grades" >2do Bachillerato</option>
+          <option value="1A1" class="grades" >3ro Bachillerato</option>
+
+        </select>
+        <hr>
+      <input class="inc" type="submit" value="Crear Torneo">
+        <input routerLink="/futbol-adm" class="reg" type="submit" value="Cancelar">
+
+       
+
+    </form>
+
+
+  </div>
+
+
+
+</ion-content>
