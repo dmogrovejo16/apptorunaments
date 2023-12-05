@@ -39,9 +39,7 @@
 
       <ion-row class="ion-align-items-center">
         <ion-col style="height: 2rem;" size="12" class="ion-text-center">
-        <button (click)="onButtonClick()" [disabled]="isButton1Disabled" routerLink="/create-futbol-match-adm" style="background-color: rgba(255, 255, 255, 0); margin-right: 10%;">
-          <ion-icon size="large" name="create"></ion-icon>
-        </button>
+
 
         <button  routerLink="/input-results-matches-fut-adm" (click)="onButtonClick()" [disabled]="isButton2Disabled" style="background-color: rgba(255, 255, 255, 0); width: auto;">
           <ion-icon size="large" name="medal"></ion-icon>
@@ -54,7 +52,13 @@
   </ion-item>
 
 </ion-list>
-
+<div class="add">
+  <ion-fab>
+    <ion-fab-button color="success" routerLink="/create-futbol-match-adm" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </div>
 
 
 
