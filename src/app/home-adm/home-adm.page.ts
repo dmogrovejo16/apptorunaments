@@ -14,6 +14,7 @@ export class HomeAdmPage implements OnInit {
     spaceBetween: 10,
   };
   constructor() { }
+  nombre: string = localStorage.getItem("Name")!;
 
   ngOnInit() {
   }

@@ -35,15 +35,15 @@
 <hr>
 <ion-input type="text" class="input"  [(ngModel)]="lastName" name="lastname" placeholder="Apellido"></ion-input>
 <hr>
-<ion-input type="text" class="input"  [(ngModel)]="rol" name="rol"  placeholder="Ocupacion (estudiante, docente)"></ion-input>
+<ion-input type="text" class="input"   name="rol"  placeholder="Ocupacion (estudiante, docente)"></ion-input>
 <hr>
-<ion-input type="email" class="input" [(ngModel)]="Username"  name="email"  placeholder="Correo electrónico"></ion-input>
+<ion-input type="email" class="input" [(ngModel)]="email"  name="email"  placeholder="Correo electrónico"></ion-input>
 <hr>
-<ion-input type="password" class="input"  [(ngModel)]="newPassword" name="pass" placeholder="Nueva contraseña"></ion-input>
+<ion-input type="password" class="input"  [(ngModel)]="password" name="pass" placeholder="Nueva contraseña"></ion-input>
 <hr>
 
 <hr>
-<button class="submit" (click)="register()">
+<button class="submit" (click)="addStudent()">
   <p class="send">Registrarse</p>
 </button>
 
