@@ -34,6 +34,7 @@ export class LoginPage implements OnInit {
       console.log("SUCCESS ===", res);
       console.log(this.email);
       console.log(this.password);
+      
       if(res.some((item: { email: any; }) => item.email === this.email)&&res.some((item: { password: any; }) => item.password === this.password)&&this.email.includes('.est')){
         this.router.navigate(['/home-est']);
         this.presentToastGood('Resgistro exitoso');
@@ -46,6 +47,7 @@ export class LoginPage implements OnInit {
         console.log(apellido);
         localStorage.setItem("Name", nombre);
         localStorage.setItem("Last Name",apellido);
+        localStorage.setItem("Email", this.email);
         
       } else if(res.some((item: { email: any; }) => item.email === this.email) && res.some((item: { password: any; }) => item.password === this.password)&&!this.email.includes('.est')){
         this.router.navigate(['/home-adm']);
@@ -58,6 +60,7 @@ export class LoginPage implements OnInit {
         console.log(apellido);
         localStorage.setItem("Name", nombre);
         localStorage.setItem("Last Name",apellido);
+        localStorage.setItem("Email", this.email);
       } else if(res.some((item: { email: any; }) => item.email === this.email) && !res.some((item: { password: any; }) => item.password === this.password)){
         this.presentToast('Contraseña incorrecta');
       }else if (!res.some((item: { email: any; }) => item.email === this.email)){

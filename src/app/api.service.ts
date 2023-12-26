@@ -24,4 +24,8 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.get('http://localhost/getStudents.php/');
 
       }
+
+      delete(email: string | null){
+        return this.http.delete('http://localhost/delete.php?email='+email);
+      }
 }

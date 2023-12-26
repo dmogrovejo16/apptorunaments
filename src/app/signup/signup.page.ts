@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 
@@ -14,7 +14,9 @@ export class SignupPage implements OnInit {
   lastName: string = '';
   email: string = '';
  
-  constructor(private router: Router,public _apiService: ApiService,private toastController: ToastController) { }
+  constructor(private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { 
+  
+  }
 
   ngOnInit() {
   }
@@ -46,6 +48,12 @@ export class SignupPage implements OnInit {
  
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 
+
+
+
+
+ 
+
     let data = {
       name: this.name,
       lastName: this.lastName,
@@ -54,17 +62,20 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
     }
   
   this._apiService.addStudent(data).subscribe((res:any)=>{
-    console.log("SUCCESS ===", res);
+
+    this.route.params.subscribe((param:any) =>{
+      this.email = param.email;
+      console.log(this.email);
+      
+          }) 
+          
+      console.log("SUCCESS ===", res);
     this.name='';
     this.lastName='';
     this.password='';
     this.email='';
     alert('SUCCESS');
-  },(error: any)=>{ 
-    alert('ERROR');
-    console.log("ERROR ===", error);
-  })
-  
+     
   if (!this.email.includes('est@') ) {
  
     this.router.navigate(['/home-adm']);
@@ -76,11 +87,14 @@ if (this.email.includes('est@') ) {
   this.router.navigate(['/home-est']);
 this.presentToastGood('Resgistro exitoso');
 }
+    
 
-    }else{
-      this.presentToastBad('El correo debe ser del dominio UETS');
-
-    }
+    
+  },(error: any)=>{ 
+    alert('ERROR');
+    console.log("ERROR ===", error);
+  })
+ 
   }
 }
-
+}
