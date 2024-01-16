@@ -15,6 +15,7 @@ this.headers.append('Access-Control-Allow-Origin', '*');
 
   }
 
+
   
   addStudent(data: { email: any; name: any; lastName: any; password: any; }){
     return this.http.post('http://localhost/create.php/', data);
@@ -28,4 +29,13 @@ this.headers.append('Access-Control-Allow-Origin', '*');
       delete(email: string | null){
         return this.http.delete('http://localhost/delete.php?email='+email);
       }
+
+      addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string;  }){
+        return this.http.post('http://localhost/createTorunament.php/', data);
+      }
+
+      getTournaments(){
+        return this.http.get('http://localhost/getTournaments.php/');
+      }
+
 }

@@ -20,14 +20,14 @@
 
     
     <form action="" class="form" method="post">
-      <label class="text" for="torname" >Nombre del Torneo:</label>
-      <input type="text" id="torname" placeholder="Crea un nombre único"  name="torneoName" required>
+      <label class="text"   >Nombre del Torneo:</label>
+      <input type="text" id="torname" placeholder="Crea un nombre único" [(ngModel)]="name"  name="torneoName" required>
   <hr>
-      <label class="text"  for="fechIn">Fecha de inicio:</label>
-      <input type="date" id="fechaInicio" name="fechIn" required>
+      <label class="text"    >Fecha de inicio:</label>
+      <input type="date" id="fechaInicio"  [(ngModel)]="fechIni" name="fechIn" required>
 
-      <label class="text"  for="fechFin">Fecha de finzalización:</label>
-      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      <label class="text"  >Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" [(ngModel)]="fechFin" name="fechFin" required>
       <hr>
   
       <label class="text" id="grades"  for="level">Nivel:</label>
@@ -39,7 +39,7 @@
 
         </select>
         <hr>
-      <input class="inc" type="submit" value="Crear Torneo">
+      <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
         <input routerLink="/futbol-adm" class="reg" type="submit" value="Cancelar">
 
        

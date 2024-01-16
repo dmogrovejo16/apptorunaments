@@ -24,14 +24,12 @@
   </div>
 <div class="tour">
 
- <ion-button routerLink="/levels-tournaments-fut-adm" color="success" class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> <div class="torneos_one"><div class="txt">Torneo 1</div></div></ion-button>
- <ion-button color="success" routerLink="/create-futbol-torunament-adm"   [disabled]="isButton11Disabled" shape="round" class="uno"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
+ <ion-button *ngFor="let torneo of torneos" routerLink="/levels-tournaments-fut-adm" color="success" class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> <div class="torneos_one"><div class="txt">{{torneo.nombreTorneo}}</div><ion-button color="danger" routerLink="/create-futbol-torunament-adm" shape="round" ><ion-icon size="large" name="trash-outline"></ion-icon></ion-button></div></ion-button>
+ 
+ 
+ <ion-button color="success" routerLink="/create-futbol-torunament-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>
 
- <ion-button color="success" class="torneo" shape="round"  (click)="onButtonClick()" [disabled]="isButton2Disabled"><div class="torneos_two"><div class="txt">Torneo 2</div></div></ion-button >
- <ion-button routerLink="/create-futbol-torunament-adm" color="success" [disabled]="isButton21Disabled" shape="round" class="dos"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
 
- <ion-button color="success" class="torneo" shape="round"  (click)="onButtonClick()" [disabled]="isButton3Disabled"><div class="torneos_three"><div class="txt">Torneo 3</div></div></ion-button>
- <ion-button color="success" [disabled]="isButton31Disabled" shape="round" class="tres" routerLink="/create-futbol-torunament-adm"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
 
 
 </div>

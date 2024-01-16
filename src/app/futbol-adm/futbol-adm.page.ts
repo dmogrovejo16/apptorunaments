@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-futbol-adm',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./futbol-adm.page.scss'],
 })
 export class FutbolAdmPage implements OnInit {
-
+  torneos: any[] = [];
   isButton1Disabled: boolean = false;
   isButton2Disabled: boolean = true;
   isButton3Disabled: boolean = true;
@@ -15,12 +17,21 @@ export class FutbolAdmPage implements OnInit {
   isButton21Disabled: boolean=false;
   isButton31Disabled: boolean=false;
   state: string = "";
-  constructor() { }
+  constructor(private http: HttpClient, public _apiService: ApiService) { }
 
   ngOnInit() {   
     this.isButton11Disabled=!this.isButton1Disabled;
     this.isButton21Disabled=!this.isButton2Disabled;
     this.isButton31Disabled=!this.isButton3Disabled;
+
+    this._apiService.getTournaments().subscribe((res:any)=>{
+console.log(res);
+this.torneos=res;
+  },(error: any)=>{ 
+      alert('ERROR');
+      console.log("ERROR ===", error);
+    })
+  
   }
 
   onButtonClick() {
@@ -30,6 +41,8 @@ export class FutbolAdmPage implements OnInit {
     this.isButton1Disabled = false; 
   }
   }
+
+
 
 
 }

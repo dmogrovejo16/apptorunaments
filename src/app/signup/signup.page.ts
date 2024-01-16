@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,7 @@ export class SignupPage implements OnInit {
   lastName: string = '';
   email: string = '';
  
-  constructor(private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { 
+  constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { 
   
   }
 
@@ -44,8 +45,13 @@ export class SignupPage implements OnInit {
     toast.present();
   }
 
+
+
   addStudent(){
+    console.log(this.name,this.lastName,this.password,this.email);
  
+
+    
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 
 
