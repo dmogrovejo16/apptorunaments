@@ -55,11 +55,6 @@ export class SignupPage implements OnInit {
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 
 
-
-
-
- 
-
     let data = {
       name: this.name,
       lastName: this.lastName,
@@ -67,28 +62,18 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
       email: this.email,
     }
   
-  this._apiService.addStudent(data).subscribe((res:any)=>{
+ 
 
-    this.route.params.subscribe((param:any) =>{
-      this.email = param.email;
-      console.log(this.email);
-      
-          }) 
+  this._apiService.addStudent(data).subscribe((res:any)=>{
           
       console.log("SUCCESS ===", res);
-    this.name='';
-    this.lastName='';
-    this.password='';
-    this.email='';
     alert('SUCCESS');
-     
-  if (!this.email.includes('est@') ) {
+      console.log(this.name,this.lastName,this.password,this.email);
+  if (!this.email.includes('.est') ) {
  
     this.router.navigate(['/home-adm']);
   this.presentToastGood('Resgistro exitoso');
-}
-
-if (this.email.includes('est@') ) {
+}else {
  
   this.router.navigate(['/home-est']);
 this.presentToastGood('Resgistro exitoso');
@@ -101,6 +86,7 @@ this.presentToastGood('Resgistro exitoso');
     console.log("ERROR ===", error);
   })
  
+
   }
 }
 }

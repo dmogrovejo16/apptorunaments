@@ -10,10 +10,7 @@ import { ApiService } from '../api.service';
 })
 export class ProfileEstPage implements OnInit {
   esp: string = " ";
-  nombre: string = localStorage.getItem("Name")!;
-  nombreCapitalizado: string = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
-  apellido: string = localStorage.getItem("Last Name")!;
-  apellidoCapitalizado: string = this.apellido.charAt(0).toUpperCase() + this.apellido.slice(0, -1);
+  nombreCapitalizado: string = localStorage.getItem("Name")! + " " +localStorage.getItem("Last Name")!;
   email: string| null = localStorage.getItem("Email");
   
   constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) { }

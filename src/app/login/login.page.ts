@@ -48,10 +48,8 @@ export class LoginPage implements OnInit {
           console.log('no hay');
         }
 
-        const posicionPunto: number = this.email.indexOf('.');
-        const nombre: string = this.email.substring(0, posicionPunto);
-        const segundoPunto: number = this.email.indexOf('.', posicionPunto + 1);
-        const apellido: string = this.email.substring(posicionPunto+1, segundoPunto);
+        const nombre= res.find((estudiante: any) => estudiante.email === this.email).nombre;
+        const apellido= res.find((estudiante: any) => estudiante.email === this.email).apellido;
         console.log(nombre);
         console.log(apellido);
         localStorage.setItem("Name", nombre);

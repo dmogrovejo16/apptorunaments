@@ -26,6 +26,11 @@ this.headers.append('Access-Control-Allow-Origin', '*');
 
       }
 
+      getSingleStudent(data: { email:any; }){
+        return this.http.get('http://localhost/getSingleStudent.php/');
+
+      }
+
       delete(email: string | null){
         return this.http.delete('http://localhost/delete.php?email='+email);
       }
