@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
+import * as CryptoJS from 'crypto-js';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -20,7 +22,12 @@ export class LoginPage implements OnInit {
   password: string = '';
   lastName: string = '';
   email: string = '';
- 
+  hashedPassword: string= '';
+
+  hashPassword(password: string): string {
+    return CryptoJS.SHA512(password).toString();
+  }
+
   ngOnInit() {
     
   }
@@ -28,14 +35,16 @@ export class LoginPage implements OnInit {
   
   
   iniciarSesion(){
-    
+  this.hashedPassword = this.hashPassword(this.password);
+
+
    
     this._apiService.getStudents().subscribe((res:any)=>{
       console.log("SUCCESS ===", res);
       console.log(this.email);
       console.log(this.password);
       
-      if(res.some((item: { email: any; }) => item.email === this.email)&&res.some((item: { contrasena: any; }) => item.contrasena === this.password)&&this.email.includes('.est')){
+      if(res.some((item: { email: any; }) => item.email === this.email)&&res.some((item: { contrasena: any; }) => item.contrasena === this.hashedPassword)&&this.email.includes('.est')){
         this.router.navigate(['/home-est']);
         this.presentToastGood('Resgistro exitoso');
     
@@ -56,7 +65,7 @@ export class LoginPage implements OnInit {
         localStorage.setItem("Last Name",apellido);
         localStorage.setItem("Email", this.email);
         
-      } else if(res.some((item: { email: any; }) => item.email === this.email) && res.some((item: { contrasena: any; }) => item.contrasena === this.password)&&!this.email.includes('.est')){
+      } else if(res.some((item: { email: any; }) => item.email === this.email) && res.some((item: { contrasena: any; }) => item.contrasena === this.hashedPassword)&&!this.email.includes('.est')){
         const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
        
         if (estudianteEncontrado) {

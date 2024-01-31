@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-signup',
@@ -17,6 +18,10 @@ export class SignupPage implements OnInit {
  
   constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { 
   
+  }
+
+  hashPassword(password: string): string {
+    return CryptoJS.SHA512(password).toString();
   }
 
   ngOnInit() {
@@ -50,7 +55,10 @@ export class SignupPage implements OnInit {
   addStudent(){
     console.log(this.name,this.lastName,this.password,this.email);
  
-
+   
+    const hashedPassword = this.hashPassword(this.password);
+    console.log("Contraseña original:", this.password);
+    console.log("Contraseña hasheada:", hashedPassword);
     
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 
