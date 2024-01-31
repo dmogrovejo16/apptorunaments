@@ -34,6 +34,14 @@ this.torneos=res;
   
   }
 
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
+  }
+
   onButtonClick() {
   if (this.state="") {
     this.isButton1Disabled = true; 

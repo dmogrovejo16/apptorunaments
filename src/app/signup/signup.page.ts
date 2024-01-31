@@ -65,7 +65,8 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
  
 
   this._apiService.addStudent(data).subscribe((res:any)=>{
-          
+    
+
       console.log("SUCCESS ===", res);
     alert('SUCCESS');
       console.log(this.name,this.lastName,this.password,this.email);
@@ -79,10 +80,20 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 this.presentToastGood('Resgistro exitoso');
 }
     
+this._apiService.getStudents().subscribe((res:any)=>{
 
+  const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
+  const idEstudiante = estudianteEncontrado.id;
+  localStorage.setItem("id", estudianteEncontrado.id);
+
+
+},(error: any)=>{ 
+  alert(error);
+  console.log("ERROR ===", error);
+})
     
   },(error: any)=>{ 
-    alert('ERROR');
+    alert(error);
     console.log("ERROR ===", error);
   })
  

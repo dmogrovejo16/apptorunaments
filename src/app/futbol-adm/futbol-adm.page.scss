@@ -9,6 +9,14 @@
 .txt{
     display: flex;
     justify-content: center;
+    flex-direction: row;
+}
+
+#fecha{
+    opacity: 0.5;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
 }
 
 

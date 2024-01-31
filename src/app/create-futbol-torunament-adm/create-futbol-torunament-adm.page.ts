@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ToastController } from '@ionic/angular';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-create-futbol-torunament-adm',
@@ -45,10 +45,22 @@ export class CreateFutbolTorunamentAdmPage implements OnInit {
       this.fechFin='';
       this.idAdmCreator='';
       alert('SUCCESS');
+      this.router.navigate(['/futbol-adm']);
+      this.presentToast('Torneo creado exitosamente');
   },(error: any)=>{ 
     alert('ERROR');
     console.log("ERROR ===", error);
   })
+}
+
+async presentToast(message: string) {
+  const toast = await this.toastController.create({
+    message: message,
+    duration: 2000, 
+    position: 'bottom', 
+    color: 'success', 
+  });
+  toast.present();
 }
 
 }
