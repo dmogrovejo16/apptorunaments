@@ -22,7 +22,7 @@ this.headers.append('Access-Control-Allow-Origin', '*');
       }
 
       getStudents(){
-        return this.http.get('192.168.1.11/getStudents.php/');
+        return this.http.get('http://localhost/getStudents.php/');
 
       }
 
