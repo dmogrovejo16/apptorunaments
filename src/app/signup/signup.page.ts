@@ -15,7 +15,7 @@ export class SignupPage implements OnInit {
   password: string = '';
   lastName: string = '';
   email: string = '';
- 
+
   constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { 
   
   }
@@ -70,7 +70,10 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
       email: this.email,
     }
   
- 
+    localStorage.setItem("Email",this.email); 
+    localStorage.setItem("Name",this.name); 
+    localStorage.setItem("lastName",this.lastName); 
+  
 
   this._apiService.addStudent(data).subscribe((res:any)=>{
     

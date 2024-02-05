@@ -12,7 +12,7 @@ export class FutbolAdmPage implements OnInit {
   isButton1Disabled: boolean = false;
   isButton2Disabled: boolean = true;
   isButton3Disabled: boolean = true;
-
+  nombreTorneo: any ;
   isButton11Disabled: boolean=false;
   isButton21Disabled: boolean=false;
   isButton31Disabled: boolean=false;
@@ -41,6 +41,21 @@ this.torneos=res;
       event.target.complete();
     }, 1500);
   }
+
+obtenerNombre(){
+  
+
+   this.nombreTorneo = document.getElementById("nombreTor");
+
+   if (this.nombreTorneo  !== null) {
+    var texto = this.nombreTorneo.innerText;
+      
+      localStorage.setItem("NombreTorneo", texto);
+
+  } else {
+      console.log("El elemento no fue encontrado.");
+  }
+}
 
   onButtonClick() {
   if (this.state="") {

@@ -142,30 +142,6 @@ const routes: Routes = [
     loadChildren: () => import('./input-results-matches-vol-adm/input-results-matches-vol-adm.module').then( m => m.InputResultsMatchesVolAdmPageModule)
   },
   {
-    path: 'create-futbol-match-second-adm',
-    loadChildren: () => import('./create-futbol-match-second-adm/create-futbol-match-second-adm.module').then( m => m.CreateFutbolMatchSecondAdmPageModule)
-  },
-  {
-    path: 'create-futbol-match-third-adm',
-    loadChildren: () => import('./create-futbol-match-third-adm/create-futbol-match-third-adm.module').then( m => m.CreateFutbolMatchThirdAdmPageModule)
-  },
-  {
-    path: 'create-basquet-match-second-adm',
-    loadChildren: () => import('./create-basquet-match-second-adm/create-basquet-match-second-adm.module').then( m => m.CreateBasquetMatchSecondAdmPageModule)
-  },
-  {
-    path: 'create-basquet-match-third-adm',
-    loadChildren: () => import('./create-basquet-match-third-adm/create-basquet-match-third-adm.module').then( m => m.CreateBasquetMatchThirdAdmPageModule)
-  },
-  {
-    path: 'create-volley-match-third-adm',
-    loadChildren: () => import('./create-volley-match-third-adm/create-volley-match-third-adm.module').then( m => m.CreateVolleyMatchThirdAdmPageModule)
-  },
-  {
-    path: 'create-volley-match-second-adm',
-    loadChildren: () => import('./create-volley-match-second-adm/create-volley-match-second-adm.module').then( m => m.CreateVolleyMatchSecondAdmPageModule)
-  },
-  {
     path: 'futbol-matches-second-adm',
     loadChildren: () => import('./futbol-matches-second-adm/futbol-matches-second-adm.module').then( m => m.FutbolMatchesSecondAdmPageModule)
   },

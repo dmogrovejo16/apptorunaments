@@ -21,8 +21,27 @@ this.headers.append('Access-Control-Allow-Origin', '*');
     return this.http.post('http://localhost/create.php/', data);
       }
 
+      addMatch(data: { fecha: any; hora: any; equipo1: any; equipo2: any;etapa:any; nivel:any; nombreTorneo:any; disciplina:any; email:any}){
+        return this.http.post('http://localhost/createMatch.php/', data);
+          }
+
       getStudents(){
-        return this.http.get('http://192.168.1.11/getStudents.php/');
+        return this.http.get('http://localhost/getStudents.php/');
+
+      }
+
+      getMatchesFirst(){
+        return this.http.get('http://localhost/getMatches_first.php/');
+
+      }
+
+      getMatchesSecond(){
+        return this.http.get('http://localhost/getMatches_second.php/');
+
+      }
+
+      getMatchesThird(){
+        return this.http.get('http://localhost/getMatches_third.php/');
 
       }
 

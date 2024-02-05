@@ -23,7 +23,7 @@
      
   <hr>
   <label class="text"  for="eq1">Equipo #1:</label>
-      <select [(ngModel)]="selectedColor" id="colores" name="color">
+      <select name="equipo1" [(ngModel)]="equipo1" id="colores" name="color">
         <option *ngFor="let color of filteredColors" [value]="color" value="1E1" class="gradeOp" >{{ color }}</option>
         <option *ngFor="let color of filteredColors" value="1E2">{{ color }}</option>
         <option *ngFor="let color of filteredColors" value="1A1">{{ color }}</option>
@@ -68,7 +68,7 @@
       </select>
 <hr>
       <label class="text"  for="eq2">Equipo #2:</label>
-      <select [(ngModel)]="selectedTeam" id="colores" name="color">
+      <select name="equipo2" [(ngModel)]="equipo2" id="colores" name="color">
         <option *ngFor="let color of filteredColors" [value]="color" class="gradeOp"  value="1E1" >{{ color }}</option>
         <option *ngFor="let color of filteredColors" value="1E2">{{ color }}</option>
         <option *ngFor="let color of filteredColors" value="1A1">{{ color }}</option>
@@ -112,8 +112,9 @@
         <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
       </select>
       <hr>
+
       <label class="text"  for="eq1">Etapa:</label>
-      <select id="etaplab">
+      <select name="etapa" [(ngModel)]="etapa" id="etaplab">
         <option disabled selected>Selecciona una etapa del torneo:</option>
         <option value="1E1" class="gradeOp" >Final</option>
         <option value="1E2"  class="gradeOp">Semifinal</option>
@@ -123,16 +124,25 @@
       </select>
       <hr>
       <label class="text"  for="fech">Fecha:</label>
-      <input type="date" id="fecha" name="fecha" required>
+      <input name="fecha" [(ngModel)]="fecha" type="date" id="fecha" required>
       <hr>
+
       <label class="text"  for="hora">Hora de inicio:</label>
-      <input type="time" id="hourIn" name="hour" required>
+      <input type="time" [(ngModel)]="hora" id="hourIn" name="hour" required>
+
+      <label class="text"   for="hora">Disciplina:</label>
+      <select id="etaplab" name="dis" [(ngModel)]="disciplina">
+        <option disabled value="" >Seleccionar:</option>
+        <option value="1E1" class="gradeOp" >Futbol</option>
+        <option value="1E2"  class="gradeOp" selected>Basquetball</option>
+        <option value="1A1"  class="gradeOp">Volleyball</option>
+      </select>
 
       <hr>
   
      
 
-      <input class="inc" (click)="mostrar()" type="submit" value="Crear Partido">
+      <input class="inc" (click)="crearPartido()" type="submit" value="Crear Partido">
         <input class="reg" routerLink="/basquet-matches-adm" type="submit" value="Cancelar">
 
 
