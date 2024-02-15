@@ -56,20 +56,13 @@
       <hr>
       <label class="text"  for="hora">Disciplina:</label>
       <select id="etaplab" name="dis" [(ngModel)]="disciplina">
-        <option disabled value="" >Seleccionar:</option>
+        <option disabled >Seleccionar:</option>
         <option value="Futbol" class="gradeOp" selected>Futbol</option>
         <option value="Basquetball"  class="gradeOp" >Basquetball</option>
         <option value="Volleyball"  class="gradeOp">Volleyball</option>
       </select>
 
       <hr>
-      <label class="text"  for="hora">Nivel:</label>
-      <select id="etaplab" name="nivel" [(ngModel)]="nivel">
-        <option disabled value="" selected >Seleccionar:</option>
-        <option value="Primero" class="gradeOp">Primero</option>
-        <option value="Segundo"  class="gradeOp" >Segundo</option>
-        <option value="Tercero"  class="gradeOp">Tercero</option>
-      </select>
      
 
       <input class="inc" (click)="crearPartido()" type="submit" value="Crear Partido">

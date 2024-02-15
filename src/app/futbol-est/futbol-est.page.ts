@@ -10,6 +10,7 @@ import { ApiService } from '../api.service';
 })
 export class FutbolEstPage implements OnInit {
   torneos: any[] = [];
+  nombreTorneo: any ;
 
   isButton1Disabled: boolean = false;
   isButton2Disabled: boolean = true;
@@ -33,5 +34,18 @@ export class FutbolEstPage implements OnInit {
     } else {
       this.isButton1Disabled = false; 
     }
+
+
+    this.nombreTorneo = document.getElementById("nombreTor");
+
+    if (this.nombreTorneo  !== null) {
+     var texto = this.nombreTorneo.innerText;
+       
+       localStorage.setItem("NombreTorneo", texto);
+       console.log(texto);
+ 
+   } else {
+       console.log("El elemento no fue encontrado.");
+   }
     }
 }

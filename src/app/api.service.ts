@@ -25,6 +25,10 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.post('http://localhost/createMatch.php/', data);
           }
 
+          resultMatch(data: { resEq1: any; resEq2: any; id:any;}){
+            return this.http.post('http://localhost/updateStudent.php/', data);
+              }
+
       getStudents(){
         return this.http.get('http://localhost/getStudents.php/');
 

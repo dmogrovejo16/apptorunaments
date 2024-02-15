@@ -8,27 +8,32 @@ import { ApiService } from '../api.service';
   styleUrls: ['./futbol-matches-adm.page.scss'],
 })
 export class FutbolMatchesAdmPage implements OnInit {
-  isButton1Disabled: boolean;
-  isButton2Disabled: boolean=true;
 
+nombreTorneo:any;
+id: any;
+Eq1: any;
+Eq2: any;
   partidos: any[] = [];
 
   constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { 
 
-    this.isButton1Disabled=this.isButton2Disabled;
 
 
   }
 
   ngOnInit() {
 
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
+
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
       console.log(res);
       this.partidos=res;
+
         },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);
           })
+
 
         const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
 
@@ -45,20 +50,26 @@ export class FutbolMatchesAdmPage implements OnInit {
             // Ahora puedes hacer lo que quieras con el texto, por ejemplo, imprimirlo en la consola
             console.log('Texto dentro del div:', textoDelDiv);
 
-            if(textoDelDiv=="Nombre 1"){
-              this.isButton1Disabled=false;
-              this.isButton2Disabled=true;
-                  }
+        
 
-                  if(textoDelDiv!="Nombre 1"){
-                    this.isButton1Disabled=false;
-                    this.isButton2Disabled=false;
-                        }
+
 
 
           }
         });
 
+  }
+
+  enviarID(id: any, Eq1:any, Eq2:any){
+this.id=id;
+this.Eq1=Eq1;
+this.Eq2=Eq2;
+console.log(this.id);
+console.log(this.Eq1);
+console.log(this.Eq2);
+localStorage.setItem("idPartido",this.id);
+localStorage.setItem("Equipo1",this.Eq1);
+localStorage.setItem("Equipo2",this.Eq2);
   }
 
 

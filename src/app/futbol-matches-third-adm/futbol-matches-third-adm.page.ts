@@ -1,4 +1,6 @@
 import { Component, ElementRef,OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-futbol-matches-third-adm',
@@ -8,9 +10,21 @@ import { Component, ElementRef,OnInit } from '@angular/core';
 export class FutbolMatchesThirdAdmPage implements OnInit {
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
-  constructor(private el: ElementRef) {this.isButton1Disabled=this.isButton2Disabled; }
+  nombreT:any;
+  partidos: any[] = [];
+  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) {this.isButton1Disabled=this.isButton2Disabled; }
 
   ngOnInit() {
+    this.nombreT=localStorage.getItem("NombreTorneo");
+
+    this._apiService.getMatchesThird().subscribe((res:any)=>{
+      console.log(res);
+      this.partidos=res;
+        },(error: any)=>{ 
+            alert('ERROR');
+            console.log("ERROR ===", error);
+          })
+
     const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
 
         elementosConClase.forEach((nodo: Node) => {
@@ -39,6 +53,14 @@ export class FutbolMatchesThirdAdmPage implements OnInit {
 
           }
         });
+  }
+
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
   }
 
 }

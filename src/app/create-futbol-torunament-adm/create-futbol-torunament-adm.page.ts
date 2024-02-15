@@ -24,6 +24,18 @@ export class CreateFutbolTorunamentAdmPage implements OnInit {
 
 
   addTournament(){
+
+if(this.name!=''||this.fechIni!=''||this.fechFin!=''){
+
+
+
+    var fechaInicio = new Date(this.fechIni);
+    var fechaFin = new Date(this.fechFin);
+    console.log(fechaInicio,' ' ,fechaFin);
+
+
+if(fechaInicio < fechaFin){
+
     let data = {
       name: this.name,
       fechIni: this.fechIni,
@@ -51,6 +63,16 @@ export class CreateFutbolTorunamentAdmPage implements OnInit {
     alert('ERROR');
     console.log("ERROR ===", error);
   })
+  
+}else{
+  this.presentToastBad('La fecha de inicio debe ser anterior a la fecha de finalización');
+
+}
+
+}else{
+  this.presentToastBad('Porfavor complete todos los campos');
+
+}
 }
 
 async presentToast(message: string) {
@@ -59,6 +81,16 @@ async presentToast(message: string) {
     duration: 2000, 
     position: 'bottom', 
     color: 'success', 
+  });
+  toast.present();
+}
+
+async presentToastBad(message: string) {
+  const toast = await this.toastController.create({
+    message: message,
+    duration: 2000, 
+    position: 'bottom', 
+    color: 'danger', 
   });
   toast.present();
 }

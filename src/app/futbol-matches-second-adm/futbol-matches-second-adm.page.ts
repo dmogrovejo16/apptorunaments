@@ -1,4 +1,6 @@
 import { Component,ElementRef, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-futbol-matches-second-adm',
@@ -8,9 +10,26 @@ import { Component,ElementRef, OnInit } from '@angular/core';
 export class FutbolMatchesSecondAdmPage implements OnInit {
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
-  constructor(private el: ElementRef) {this.isButton1Disabled=this.isButton2Disabled; }
+  nombreT:any;
+  id: any;
+  Eq1: any;
+  Eq2: any;
+  partidos: any[] = [];
+  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) {this.isButton1Disabled=this.isButton2Disabled; }
 
   ngOnInit() {
+
+    this.nombreT=localStorage.getItem("NombreTorneo");
+
+    this._apiService.getMatchesSecond().subscribe((res:any)=>{
+      console.log(res);
+      this.partidos=res;
+        },(error: any)=>{ 
+            alert('ERROR');
+            console.log("ERROR ===", error);
+          })
+
+
     const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
 
         elementosConClase.forEach((nodo: Node) => {
@@ -39,6 +58,26 @@ export class FutbolMatchesSecondAdmPage implements OnInit {
 
           }
         });
+  }
+
+  enviarID(id: any, Eq1:any, Eq2:any){
+    this.id=id;
+    this.Eq1=Eq1;
+    this.Eq2=Eq2;
+    console.log(this.id);
+    console.log(this.Eq1);
+    console.log(this.Eq2);
+    localStorage.setItem("idPartido",this.id);
+    localStorage.setItem("Equipo1",this.Eq1);
+    localStorage.setItem("Equipo2",this.Eq2);
+      }
+
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
   }
 
 }

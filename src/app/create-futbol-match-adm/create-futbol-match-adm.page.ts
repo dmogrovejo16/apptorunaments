@@ -16,7 +16,7 @@ export class CreateFutbolMatchAdmPage implements OnInit {
   equipo2:string="";
   etapa:string="";
   nivel:string="";
-  disciplina:string="";
+  disciplina:string="" ;
   email: string | null | undefined;
   nombreTorneo: string | null | undefined;
 
@@ -61,8 +61,23 @@ export class CreateFutbolMatchAdmPage implements OnInit {
 
   crearPartido(){
 
+    if(this.fecha!=''&&this.hora!=''&&this.equipo1!=''&&this.equipo2!=''&&this.etapa!=''&&this.disciplina!=''){
 
+
+if(this.equipo1!=this.equipo2){
     
+
+  if (this.equipo1.charAt(0).toLowerCase() === this.equipo2.charAt(0).toLowerCase()) {
+    
+
+if(this.equipo1.charAt(0).toLowerCase() == '1'){
+ this.nivel='Primero';
+}else if(this.equipo1.charAt(0).toLowerCase() == '2'){
+ this.nivel='Segundo';
+}else{
+  this.nivel='Tercero';
+}
+
     this.email= localStorage.getItem('Email');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
     let data = {
@@ -88,8 +103,20 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       alert(error);
       console.log("ERROR ===", error);
     })
-    
+  } else {
+    this.presentToastBad('Los equipos a enfrentarse deben ser del mismo paralelo');
   }
 
+  }else{
+
+    this.presentToastBad('Los equipos a enfrentarse deben ser diferentes');
+  
+  }
+}else{
+  this.presentToastBad('Porfavor complete todos los campos');
+
+}
+
+}
 
 }
