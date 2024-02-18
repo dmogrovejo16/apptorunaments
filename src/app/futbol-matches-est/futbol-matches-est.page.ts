@@ -23,12 +23,12 @@ nombreTorneo:any;
 
   ngOnInit() {
 
-    this.nombreTorneo=localStorage.getItem("NombreTorneo");
+    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
 console.log(this.nombreTorneo);
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
       console.log(res);
-      this.partidos = res.filter((item: any) => item.nombreTorneo.includes(this.nombreTorneo));      
-        },(error: any)=>{ 
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+    },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);
           })

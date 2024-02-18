@@ -13,7 +13,7 @@ nombreTorneo:any;
 id: any;
 Eq1: any;
 Eq2: any;
-  partidos: any[] = [];
+partidos: any[] = [];
 
   constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { 
 
@@ -23,12 +23,17 @@ Eq2: any;
 
   ngOnInit() {
 
-    this.nombreTorneo=localStorage.getItem("NombreTorneo");
-
+    this.nombreTorneo = localStorage.getItem("NombreTorneo")?.toUpperCase();
+    
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
-      console.log(res);
-      this.partidos=res;
 
+      console.log(res);
+console.log(this.nombreTorneo);
+this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+
+console.log(this.partidos);
+
+     
         },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);

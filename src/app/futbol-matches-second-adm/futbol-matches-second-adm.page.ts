@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class FutbolMatchesSecondAdmPage implements OnInit {
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
-  nombreT:any;
+  nombreTorneo:any;
   id: any;
   Eq1: any;
   Eq2: any;
@@ -19,12 +19,15 @@ export class FutbolMatchesSecondAdmPage implements OnInit {
 
   ngOnInit() {
 
-    this.nombreT=localStorage.getItem("NombreTorneo");
+    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
 
     this._apiService.getMatchesSecond().subscribe((res:any)=>{
+
       console.log(res);
-      this.partidos=res;
-        },(error: any)=>{ 
+
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+
+    },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);
           })

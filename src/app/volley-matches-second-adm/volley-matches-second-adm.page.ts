@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-volley-matches-second-adm',
@@ -9,7 +11,9 @@ export class VolleyMatchesSecondAdmPage implements OnInit {
 
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
-  constructor(private el: ElementRef) { 
+  nombreTorneo:any;
+  partidos: any[] = [];
+  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { 
 
     this.isButton1Disabled=this.isButton2Disabled;
 
@@ -17,33 +21,57 @@ export class VolleyMatchesSecondAdmPage implements OnInit {
   }
 
   ngOnInit() {
-    const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
+    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+console.log(this.nombreTorneo);
+    this._apiService.getMatchesFirst().subscribe((res:any)=>{
+      console.log(res);
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
+    },(error: any)=>{ 
+            alert('ERROR');
+            console.log("ERROR ===", error);
+          })
 
-    elementosConClase.forEach((nodo: Node) => {
-      // Verifica si el nodo es un elemento HTMLElement
-      if (nodo.nodeType === Node.ELEMENT_NODE) {
-        const elemento: HTMLElement = nodo as HTMLElement;
+    
 
-        // Obtén el texto dentro del elemento
-        const textoDelDiv: string| null = elemento.textContent;
+        const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
 
-       
-       
-        // Ahora puedes hacer lo que quieras con el texto, por ejemplo, imprimirlo en la consola
-        console.log('Texto dentro del div:', textoDelDiv);
+        elementosConClase.forEach((nodo: Node) => {
+          // Verifica si el nodo es un elemento HTMLElement
+          if (nodo.nodeType === Node.ELEMENT_NODE) {
+            const elemento: HTMLElement = nodo as HTMLElement;
+    
+            // Obtén el texto dentro del elemento
+            const textoDelDiv: string| null = elemento.textContent;
+    
+           
+           
+            // Ahora puedes hacer lo que quieras con el texto, por ejemplo, imprimirlo en la consola
+            console.log('Texto dentro del div:', textoDelDiv);
 
-        if(textoDelDiv=="Nombre 1"){
-          this.isButton1Disabled=false;
-          this.isButton2Disabled=true;
-              }
+            if(textoDelDiv=="Nombre 1"){
+              this.isButton1Disabled=false;
+              this.isButton2Disabled=true;
+                  }
 
-              if(textoDelDiv!="Nombre 1"){
-                this.isButton1Disabled=false;
-                this.isButton2Disabled=false;
-                    }
+                  if(textoDelDiv!="Nombre 1"){
+                    this.isButton1Disabled=false;
+                    this.isButton2Disabled=false;
+                        }
 
 
-      }
-    });
+          }
+        });
+
   }
+
+
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
+  }
+
 }
+

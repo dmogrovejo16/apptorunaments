@@ -10,17 +10,17 @@ import { ApiService } from '../api.service';
 export class FutbolMatchesThirdAdmPage implements OnInit {
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
-  nombreT:any;
+  nombreTorneo:any;
   partidos: any[] = [];
   constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) {this.isButton1Disabled=this.isButton2Disabled; }
 
   ngOnInit() {
-    this.nombreT=localStorage.getItem("NombreTorneo");
+    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();;
 
     this._apiService.getMatchesThird().subscribe((res:any)=>{
       console.log(res);
-      this.partidos=res;
-        },(error: any)=>{ 
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+    },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);
           })

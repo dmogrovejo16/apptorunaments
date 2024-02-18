@@ -42,19 +42,11 @@ this.torneos=res;
     }, 1500);
   }
 
-obtenerNombre(){
-  
+obtenerNombre(nombreT:any){
+  this.nombreTorneo=nombreT;
+  localStorage.setItem("NombreTorneo", this.nombreTorneo);
 
-   this.nombreTorneo = document.getElementById("nombreTor");
 
-   if (this.nombreTorneo  !== null) {
-    var texto = this.nombreTorneo.innerText;
-      
-      localStorage.setItem("NombreTorneo", texto);
-
-  } else {
-      console.log("El elemento no fue encontrado.");
-  }
 }
 
   onButtonClick() {

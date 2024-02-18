@@ -23,11 +23,11 @@ export class VolleyMatchesAdmPage implements OnInit {
   
     ngOnInit() {
   
-      this.nombreTorneo=localStorage.getItem("NombreTorneo");
+      this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
   
       this._apiService.getMatchesFirst().subscribe((res:any)=>{
         console.log(res);
-        this.partidos=res;
+        this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
   
           },(error: any)=>{ 
               alert('ERROR');
