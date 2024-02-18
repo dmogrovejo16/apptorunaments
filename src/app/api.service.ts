@@ -58,6 +58,10 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.delete('http://localhost/delete.php?email='+email);
       }
 
+      deleteTournament(id: any){
+        return this.http.delete('http://localhost/deleteTournament.php?id='+id);
+      }
+
       addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string;  }){
         return this.http.post('http://localhost/createTorunament.php/', data);
       }

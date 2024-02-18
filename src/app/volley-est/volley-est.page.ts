@@ -47,4 +47,12 @@ export class VolleyEstPage implements OnInit {
        console.log("El elemento no fue encontrado.");
    }
     }
+
+    handleRefresh(event:any) {
+      this.ngOnInit();
+      setTimeout(() => {
+        // Any calls to load data go here
+        event.target.complete();
+      }, 1500);
+    }
 }

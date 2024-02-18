@@ -45,7 +45,7 @@ resultMatch(){
 
     console.log("SUCCESS ===", res);
     alert('SUCCESS');
-    this.router.navigate(['/futbol-matches-adm']);
+    this.router.navigate(['/basquet-matches-adm']);
     this.presentToastGood('Resultado ingresado con éxito');
 
   },(error: any)=>{ 

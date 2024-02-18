@@ -49,12 +49,41 @@ obtenerNombre(nombreT:any){
 
 }
 
+public alertButtons = [
+  {
+    text: 'Cancel',
+    role: 'cancel',
+    handler: () => {
+      console.log('Alert canceled');
+    },
+  },
+  {
+    text: 'OK',
+    role: 'confirm',
+    handler: () => {
+      console.log('Alert confirmed');
+    },
+  },
+];
+
+setResult(ev:any) {
+  console.log(`Dismissed with role: ${ev.detail.role}`);
+}
+
   onButtonClick() {
   if (this.state="") {
     this.isButton1Disabled = true; 
   } else {
     this.isButton1Disabled = false; 
   }
+  }
+
+  eliminarTorneo($event:MouseEvent){
+    if (event) {
+      event.stopPropagation(); // Detiene la propagación del evento clic si event no es undefined
+      console.log("eliminado");
+    }
+    
   }
 
 

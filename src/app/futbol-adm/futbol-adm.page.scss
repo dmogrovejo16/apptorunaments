@@ -3,6 +3,7 @@
     height: 7rem;
     border-radius: 2rem;
     font-family: 'Poppins', sans-serif;
+    z-index: 0;
 
 }
 
@@ -123,6 +124,10 @@ align-items: center;
     margin-bottom: 1rem;
 }
 
+.delete{
+z-index: 1;
+}
+
 .tour{
     margin-top: 5rem;
     display: flex;
@@ -131,4 +136,7 @@ align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1.5rem;
+}
+#fecha{
+    opacity: 0.7;
 }

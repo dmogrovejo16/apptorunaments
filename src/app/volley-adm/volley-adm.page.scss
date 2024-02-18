@@ -9,6 +9,7 @@
 .txt{
     display: flex;
     justify-content: center;
+
 }
 
 .topp{
@@ -128,4 +129,8 @@ align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+#fecha{
+    opacity: 0.7;
 }
