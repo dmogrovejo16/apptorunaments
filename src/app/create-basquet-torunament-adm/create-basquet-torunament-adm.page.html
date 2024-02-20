@@ -20,24 +20,16 @@
 
     
     <form action="" class="form" method="post">
-      <label class="text" for="torname">Nombre del Torneo:</label>
-      <input type="text" id="torname" name="torneoName" required>
+      <label class="text" for="torname"  >Nombre del Torneo:</label>
+      <input type="text" id="torname" [(ngModel)]="name" name="name" required>
       <hr>
-      <label class="text"  for="fechIn">Fecha de inicio:</label>
-      <input type="date" id="fechaInicio" name="fechIn" required>
+      <label class="text"  for="fechIn"  >Fecha de inicio:</label>
+      <input type="date" id="fechaInicio" [(ngModel)]="fechIni" name="fechIn" required>
       <hr>
-      <label class="text"  for="password">Fecha de finzalización:</label>
-      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      <label class="text"  for="password"  >Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" [(ngModel)]="fechFin" name="fechFin" required>
       <hr>
-      <label class="text" id="grades"  for="level">Nivel:</label>
-      <select id="gradesOp">
-        <option   disabled selected>Selecciona el nivel del torneo:</option>
-        <option value="1E1" class="grades" >1ro Bachillerato</option>
-        <option value="1E2" class="grades" >2do Bachillerato</option>
-        <option value="1A1" class="grades" >3ro Bachillerato</option>
-
-      </select>
-      <hr>
+ 
       <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
       <input routerLink="/basquet-adm" class="reg" type="submit" value="Cancelar">
       
