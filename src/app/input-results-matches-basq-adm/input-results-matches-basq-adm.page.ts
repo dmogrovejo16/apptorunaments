@@ -35,11 +35,16 @@ resultMatch(){
   this.Eq1=localStorage.getItem("Equipo1");
   this.Eq2=localStorage.getItem("Equipo2");
 
+
+  if(this.resEq1>=0&&this.resEq2>=0){
+
   let data = {
     resEq1: this.resEq1,
     resEq2: this.resEq2,
    id: this.id
   }
+
+
 
   this._apiService.resultMatch(data).subscribe((res:any)=>{
 
@@ -55,6 +60,9 @@ resultMatch(){
   })
 
   
+}else{
+  this.presentToastBad("Los valores no pueden ser negativos");
+}
 }
 
 async presentToastGood(message: string) {

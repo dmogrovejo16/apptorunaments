@@ -29,6 +29,14 @@ this.headers.append('Access-Control-Allow-Origin', '*');
             return this.http.post('http://localhost/updateStudent.php/', data);
               }
 
+              classStudent(data: { curso: any;  id:any;}){
+                return this.http.post('http://localhost/classStudent.php/', data);
+                  }
+
+                  areaAdministrator(data: { area: any;  id:any;}){
+                    return this.http.post('http://localhost/areaAdministrator.php/', data);
+                      }
+
       getStudents(){
         return this.http.get('http://localhost/getStudents.php/');
 

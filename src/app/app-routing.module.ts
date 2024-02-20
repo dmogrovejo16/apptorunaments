@@ -188,7 +188,15 @@ const routes: Routes = [
   {
     path: 'volley-matches-third-est',
     loadChildren: () => import('./volley-matches-third-est/volley-matches-third-est.module').then( m => m.VolleyMatchesThirdEstPageModule)
+  },  {
+    path: 'input-class-adm',
+    loadChildren: () => import('./input-class-adm/input-class-adm.module').then( m => m.InputClassAdmPageModule)
   },
+  {
+    path: 'input-area-adm',
+    loadChildren: () => import('./input-area-adm/input-area-adm.module').then( m => m.InputAreaAdmPageModule)
+  },
+
   
 ];
 

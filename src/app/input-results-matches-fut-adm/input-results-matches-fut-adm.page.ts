@@ -34,6 +34,7 @@ resultMatch(){
   this.id=localStorage.getItem("idPartido");
   this.Eq1=localStorage.getItem("Equipo1");
   this.Eq2=localStorage.getItem("Equipo2");
+  if(this.resEq1>=0&&this.resEq2>=0){
 
   let data = {
     resEq1: this.resEq1,
@@ -54,7 +55,9 @@ resultMatch(){
     this.presentToastBad('El resultado no pudo ser ingresado');
   })
 
-  
+}else{
+  this.presentToastBad("Los valores no pueden ser negativos");
+}
 }
 
 async presentToastGood(message: string) {

@@ -52,6 +52,8 @@ export class SignupPage implements OnInit {
 
 
 
+  
+
   addStudent(){
     console.log(this.name,this.lastName,this.password,this.email);
  
@@ -59,8 +61,16 @@ export class SignupPage implements OnInit {
     const hashedPassword = this.hashPassword(this.password);
     console.log("Contraseña original:", this.password);
     console.log("Contraseña hasheada:", hashedPassword);
-    
+     
+if(this.email!=""&&this.password!=""&&this.name!=""&&this.lastName!=""){
+if(!/\d/.test(this.name)&&!/\d/.test(this.lastName)){
+if(this.password.length>=8){
+
+
+
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
+
+
 
 
     let data = {
@@ -75,40 +85,69 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
     localStorage.setItem("lastName",this.lastName); 
   
 
-  this._apiService.addStudent(data).subscribe((res:any)=>{
+
+    this._apiService.getStudents().subscribe((res:any)=>{   
+
+
+      if(res.some((item: { email: any; }) => item.email === this.email)){
+this.presentToastBad("Ya existe un usuario con ese correo");
+      }else{
+
+        this._apiService.addStudent(data).subscribe((res:any)=>{
     
 
-      console.log("SUCCESS ===", res);
-    alert('SUCCESS');
-      console.log(this.name,this.lastName,this.password,this.email);
-  if (!this.email.includes('.est') ) {
- 
-    this.router.navigate(['/home-adm']);
-  this.presentToastGood('Resgistro exitoso');
-}else {
- 
-  this.router.navigate(['/home-est']);
-this.presentToastGood('Resgistro exitoso');
-}
+          console.log("SUCCESS ===", res);
+        alert('SUCCESS');
+          console.log(this.name,this.lastName,this.password,this.email);
+     
+        
+    this._apiService.getStudents().subscribe((res:any)=>{
     
-this._apiService.getStudents().subscribe((res:any)=>{
-
-  const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
-  const idEstudiante = estudianteEncontrado.id;
-  localStorage.setItem("id", estudianteEncontrado.id);
-
-
-},(error: any)=>{ 
-  alert(error);
-  console.log("ERROR ===", error);
-})
+      const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
+      const idEstudiante = estudianteEncontrado.id;
+      localStorage.setItem("id", estudianteEncontrado.id);
     
-  },(error: any)=>{ 
-    alert(error);
-    console.log("ERROR ===", error);
-  })
+    
+    },(error: any)=>{ 
+      alert(error);
+      console.log("ERROR ===", error);
+    })
+    
+    if (!this.email.includes('.est') ) {
+     
+    this.router.navigate(['/input-area-adm']);
+    }else {
+      this.router.navigate(['/input-class-adm']);
+    
+    }
+        
+      },(error: any)=>{ 
+        alert(error);
+        console.log("ERROR ===", error);
+      })
+      }
+
+    },(error: any)=>{ 
+      alert('ERROR');
+      console.log("ERROR ===", error);
+    })
+
  
 
+  }else{
+    this.presentToastBad("El correo debe ser del dominio: uets.edu.ec");
   }
+
+}else{
+this.presentToastBad("La contraseña debe ser mayor o igual a 8 caracteres");
+
+}
+}else{
+  this.presentToastBad("El nombre no puede contener numeros");
+}
+
+}else{
+  this.presentToastBad("Porfavor rellene todos los campos");
+}
 }
 }

@@ -13,49 +13,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet"> 
 
 
+<ion-content [fullscreen]="true">
 
-<ion-content>
-  <div class="section">
-    <h2 class="one">SignUp</h2> <h2 class="appname">Crea una nueva cuenta</h2>
+  <div class="container">
+
+    <div class="img">
+      <img src="https://pbs.twimg.com/profile_images/1059814290256023552/-f5_abr0_400x400.png" alt="logo tecniquito">
+    </div>
+  <div class="subtitle">
+    Solo una pregunta más
   </div>
-
-<div class="container">
-  <div class="name">
-<h2 class="title">Edusports</h2>
-<h3 class="subtitle">La app de torneos</h3>
-
+  <div class="title">
+    ¿Cuál es su rol en la institución?
   </div>
+<ion-input type="text" name="area" [(ngModel)]="area" placeholder="entrenador, profesor, etc" class="class"> </ion-input>
 
-<div class="formulario">
-
-<form action="">
-
-
-<ion-input type="text" name="name" [(ngModel)]="name" class="input" placeholder="Nombre"></ion-input>
-<hr>
-<ion-input type="text" class="input"  [(ngModel)]="lastName" name="lastname" placeholder="Apellido"></ion-input>
-<hr>
-<ion-input type="email" class="input" [(ngModel)]="email"  name="email"  placeholder="Correo electrónico"></ion-input>
-<hr>
-<ion-input type="password" class="input"  [(ngModel)]="password" name="pass" placeholder="Nueva contraseña"></ion-input>
-<hr>
-
-<hr>
-<button class="submit" (click)="addStudent()">
-  <p class="send">Registrarse</p>
-</button>
-
-</form>
-
-<p class="or">¿Ya tienes una cuenta?</p>
-<hr>
-<button class="submit" routerLink="/login">
-  <p class="send">Login</p>
-</button>
-
+<ion-button color="warning" shape="round" (click)="ingresarArea()" class="btn">Continuar <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
 
 </div>
-
-</div>
-
 </ion-content>

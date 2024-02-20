@@ -9,16 +9,22 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./profile-adm.page.scss'],
 })
 export class ProfileAdmPage implements OnInit {
+
+  area:any;
   nombre: string = localStorage.getItem("Name")!;
   nombreCapitalizado: string = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
   apellido: string = localStorage.getItem("Last Name")!;
   apellidoCapitalizado: string = this.apellido.charAt(0).toUpperCase()  + this.apellido.slice(0, -1);
   email: string| null = localStorage.getItem("Email");
 
+  nombreCompleto:any;
+
 
   constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) {}
 
   ngOnInit() {
+    this.area=localStorage.getItem("area");
+    this.nombreCompleto=this.nombreCapitalizado+" "+this.apellidoCapitalizado
   }
 
   async presentToastGood(message: string) {

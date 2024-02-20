@@ -42,20 +42,15 @@ export class LoginPage implements OnInit {
     this._apiService.getStudents().subscribe((res:any)=>{
       console.log("SUCCESS ===", res);
       console.log(this.email);
-      console.log(this.password);
       
       if(res.some((item: { email: any; }) => item.email === this.email)&&res.some((item: { contrasena: any; }) => item.contrasena === this.hashedPassword)&&this.email.includes('.est')){
         this.router.navigate(['/home-est']);
         this.presentToastGood('Resgistro exitoso');
     
         const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
-        console.log('si hay');
         if (estudianteEncontrado) {
           const idEstudiante = estudianteEncontrado.id;
-         console.log('si hay');
-        } else {
-          console.log('no hay');
-        }
+        } 
 
         const nombre= res.find((estudiante: any) => estudiante.email === this.email).nombre;
         const apellido= res.find((estudiante: any) => estudiante.email === this.email).apellido;
@@ -70,16 +65,11 @@ export class LoginPage implements OnInit {
        
         if (estudianteEncontrado) {
           const idEstudiante = estudianteEncontrado.id;
-         console.log('si hay');
-        } else {
-          console.log('no hay');
-        }
+        } 
         this.router.navigate(['/home-adm']);
         this.presentToastGood('Resgistro exitoso');
-        const posicionPunto: number = this.email.indexOf('.');
-        const nombre: string = this.email.substring(0, posicionPunto);
-        const segundoPunto: number = this.email.indexOf('.', posicionPunto + 1);
-        const apellido: string = this.email.substring(posicionPunto+1, segundoPunto);
+        const nombre= res.find((estudiante: any) => estudiante.email === this.email).nombre;
+        const apellido= res.find((estudiante: any) => estudiante.email === this.email).apellido;
         console.log(nombre);
         console.log(apellido);
         localStorage.setItem("Name", nombre);
