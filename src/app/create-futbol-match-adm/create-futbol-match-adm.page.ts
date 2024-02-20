@@ -95,10 +95,18 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
     this._apiService.addMatch(data).subscribe((res:any)=>{
 
       console.log("SUCCESS ===", res);
+<<<<<<< HEAD
+=======
+      alert('SUCCESS');
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       this.router.navigate(['/futbol-matches-adm']);
       this.presentToastGood('Partido creado con éxito');
 
     },(error: any)=>{ 
+<<<<<<< HEAD
+=======
+      alert(error);
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       console.log("ERROR ===", error);
     })
   } else {

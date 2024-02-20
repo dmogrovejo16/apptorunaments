@@ -34,7 +34,10 @@ resultMatch(){
   this.id=localStorage.getItem("idPartido");
   this.Eq1=localStorage.getItem("Equipo1");
   this.Eq2=localStorage.getItem("Equipo2");
+<<<<<<< HEAD
   if(this.resEq1>=0&&this.resEq2>=0){
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
   let data = {
     resEq1: this.resEq1,
@@ -45,17 +48,29 @@ resultMatch(){
   this._apiService.resultMatch(data).subscribe((res:any)=>{
 
     console.log("SUCCESS ===", res);
+<<<<<<< HEAD
+=======
+    alert('SUCCESS');
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
     this.router.navigate(['/futbol-matches-adm']);
     this.presentToastGood('Resultado ingresado con éxito');
 
   },(error: any)=>{ 
+<<<<<<< HEAD
+=======
+    alert(error);
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
     console.log("ERROR ===", error);
     this.presentToastBad('El resultado no pudo ser ingresado');
   })
 
+<<<<<<< HEAD
 }else{
   this.presentToastBad("Los valores no pueden ser negativos");
 }
+=======
+  
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }
 
 async presentToastGood(message: string) {

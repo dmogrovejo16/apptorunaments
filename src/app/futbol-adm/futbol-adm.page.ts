@@ -42,6 +42,7 @@ this.torneos=res;
     }, 1500);
   }
 
+<<<<<<< HEAD
 obtenerNombre(nombreT:any){
   this.nombreTorneo=nombreT;
   localStorage.setItem("NombreTorneo", this.nombreTorneo);
@@ -68,6 +69,21 @@ public alertButtons = [
 
 setResult(ev:any) {
   console.log(`Dismissed with role: ${ev.detail.role}`);
+=======
+obtenerNombre(){
+  
+
+   this.nombreTorneo = document.getElementById("nombreTor");
+
+   if (this.nombreTorneo  !== null) {
+    var texto = this.nombreTorneo.innerText;
+      
+      localStorage.setItem("NombreTorneo", texto);
+
+  } else {
+      console.log("El elemento no fue encontrado.");
+  }
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }
 
   onButtonClick() {
@@ -78,6 +94,7 @@ setResult(ev:any) {
   }
   }
 
+<<<<<<< HEAD
   eliminarTorneo($event:MouseEvent){
     if (event) {
       event.stopPropagation(); // Detiene la propagación del evento clic si event no es undefined
@@ -86,6 +103,8 @@ setResult(ev:any) {
     
   }
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 
 

@@ -23,6 +23,7 @@
      
   <hr>
   <label class="text"  for="eq1">Equipo #1:</label>
+<<<<<<< HEAD
   <select  name="equipo1" [(ngModel)]="equipo1" id="colores" name="color">
     <option *ngFor="let color of filteredColors" [value]="color" value="1E1" class="gradeOp" >{{ color }}</option>
     
@@ -68,6 +69,129 @@
 
       <input class="inc" (click)="crearPartido()" type="submit" value="Crear Partido">
         <input routerLink="/basquet-matches-adm" class="reg" type="submit" value="Cancelar">
+=======
+      <select name="equipo1" [(ngModel)]="equipo1" id="colores" name="color">
+        <option *ngFor="let color of filteredColors" [value]="color" value="1E1" class="gradeOp" >{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+
+        <option *ngFor="let color of filteredColors" value="2E1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+
+        <option *ngFor="let color of filteredColors"  value="3E1" >{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+      </select>
+<hr>
+      <label class="text"  for="eq2">Equipo #2:</label>
+      <select name="equipo2" [(ngModel)]="equipo2" id="colores" name="color">
+        <option *ngFor="let color of filteredColors" [value]="color" class="gradeOp"  value="1E1" >{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="1B2">{{ color }}</option>
+
+        <option *ngFor="let color of filteredColors" [value]="2E1" >{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="2B2">{{ color }}</option>
+
+        <option *ngFor="let color of filteredColors" [value]="3E1" >{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3E2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3A1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3A2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B1">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+        <option *ngFor="let color of filteredColors" value="3B2">{{ color }}</option>
+      </select>
+      <hr>
+
+      <label class="text"  for="eq1">Etapa:</label>
+      <select name="etapa" [(ngModel)]="etapa" id="etaplab">
+        <option disabled selected>Selecciona una etapa del torneo:</option>
+        <option value="1E1" class="gradeOp" >Final</option>
+        <option value="1E2"  class="gradeOp">Semifinal</option>
+        <option value="1A1"  class="gradeOp">Cuartos de final</option>
+        <option value="1A1"  class="gradeOp">Octavos de final</option>
+        <option value="1A1"  class="gradeOp">Fase de grupos</option>
+      </select>
+      <hr>
+      <label class="text"  for="fech">Fecha:</label>
+      <input name="fecha" [(ngModel)]="fecha" type="date" id="fecha" required>
+      <hr>
+
+      <label class="text"  for="hora">Hora de inicio:</label>
+      <input type="time" [(ngModel)]="hora" id="hourIn" name="hour" required>
+
+      <label class="text"   for="hora">Disciplina:</label>
+      <select id="etaplab" name="dis" [(ngModel)]="disciplina">
+        <option disabled value="" >Seleccionar:</option>
+        <option value="1E1" class="gradeOp" >Futbol</option>
+        <option value="1E2"  class="gradeOp" selected>Basquetball</option>
+        <option value="1A1"  class="gradeOp">Volleyball</option>
+      </select>
+
+      <hr>
+  
+     
+
+      <input class="inc" (click)="crearPartido()" type="submit" value="Crear Partido">
+        <input class="reg" routerLink="/basquet-matches-adm" type="submit" value="Cancelar">
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 
 

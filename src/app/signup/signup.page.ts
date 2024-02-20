@@ -52,8 +52,11 @@ export class SignupPage implements OnInit {
 
 
 
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
   addStudent(){
     console.log(this.name,this.lastName,this.password,this.email);
  
@@ -61,6 +64,7 @@ export class SignupPage implements OnInit {
     const hashedPassword = this.hashPassword(this.password);
     console.log("Contraseña original:", this.password);
     console.log("Contraseña hasheada:", hashedPassword);
+<<<<<<< HEAD
      
 if(this.email!=""&&this.password!=""&&this.name!=""&&this.lastName!=""){
 if(!/\d/.test(this.name)&&!/\d/.test(this.lastName)){
@@ -73,6 +77,12 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 
 
 
+=======
+    
+if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
+
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
     let data = {
       name: this.name,
       lastName: this.lastName,
@@ -85,6 +95,7 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
     localStorage.setItem("lastName",this.lastName); 
   
 
+<<<<<<< HEAD
 
     this._apiService.getStudents().subscribe((res:any)=>{   
 
@@ -145,5 +156,42 @@ this.presentToastBad("La contraseña debe ser mayor o igual a 8 caracteres");
 }else{
   this.presentToastBad("Porfavor rellene todos los campos");
 }
+=======
+  this._apiService.addStudent(data).subscribe((res:any)=>{
+    
+
+      console.log("SUCCESS ===", res);
+    alert('SUCCESS');
+      console.log(this.name,this.lastName,this.password,this.email);
+  if (!this.email.includes('.est') ) {
+ 
+    this.router.navigate(['/home-adm']);
+  this.presentToastGood('Resgistro exitoso');
+}else {
+ 
+  this.router.navigate(['/home-est']);
+this.presentToastGood('Resgistro exitoso');
+}
+    
+this._apiService.getStudents().subscribe((res:any)=>{
+
+  const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
+  const idEstudiante = estudianteEncontrado.id;
+  localStorage.setItem("id", estudianteEncontrado.id);
+
+
+},(error: any)=>{ 
+  alert(error);
+  console.log("ERROR ===", error);
+})
+    
+  },(error: any)=>{ 
+    alert(error);
+    console.log("ERROR ===", error);
+  })
+ 
+
+  }
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }
 }

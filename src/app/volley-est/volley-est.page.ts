@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-volley-est',
@@ -8,6 +12,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./volley-est.page.scss'],
 })
 export class VolleyEstPage implements OnInit {
+<<<<<<< HEAD
   torneos: any[] = [];
   nombreTorneo: any ;
 
@@ -26,6 +31,15 @@ export class VolleyEstPage implements OnInit {
             alert('ERROR');
             console.log("ERROR ===", error);
           })
+=======
+  isButton1Disabled: boolean = false;
+  isButton2Disabled: boolean = true;
+  isButton3Disabled: boolean = true;  
+  state: string = "";
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
   }
   onButtonClick() {
     if (this.state="") {
@@ -33,6 +47,7 @@ export class VolleyEstPage implements OnInit {
     } else {
       this.isButton1Disabled = false; 
     }
+<<<<<<< HEAD
 
 
     this.nombreTorneo = document.getElementById("nombreTor");
@@ -54,5 +69,7 @@ export class VolleyEstPage implements OnInit {
         // Any calls to load data go here
         event.target.complete();
       }, 1500);
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
     }
 }

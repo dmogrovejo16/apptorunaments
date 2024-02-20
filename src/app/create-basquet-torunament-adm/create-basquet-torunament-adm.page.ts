@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ApiService } from '../api.service';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+=======
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 @Component({
   selector: 'app-create-basquet-torunament-adm',
   templateUrl: './create-basquet-torunament-adm.page.html',
   styleUrls: ['./create-basquet-torunament-adm.page.scss'],
 })
 export class CreateBasquetTorunamentAdmPage implements OnInit {
+<<<<<<< HEAD
   name: any;
   fechIni:any;
   fechFin: any;
@@ -102,3 +107,12 @@ this.presentToastBad("Ya existe un torneo con ese nombre");
     
 }
 
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

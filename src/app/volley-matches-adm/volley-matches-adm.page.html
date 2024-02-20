@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
@@ -20,6 +21,23 @@
         </ion-col>
         <ion-col style="height: 1.5rem;" size="6" class="ion-text-center">
           <p class="date">El {{partido.fechaPartido}} a las {{partido.horaPartido}}</p>
+=======
+<ion-content >
+<div class="nametour">
+  <ion-button routerLink="/levels-tournaments-voll-adm" color="danger" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
+  <h2 class="torname">Nombre del torneo</h2>
+</div>
+<ion-list  [inset]="true" lines="inset">
+  <ion-item>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col  size="3" class="ion-text-center">
+          <ion-badge color="warning">Final</ion-badge>
+          
+        </ion-col>
+        <ion-col style="height: 1.5rem;" size="6" class="ion-text-center">
+          <p class="date">Fecha y Hora del Partido</p>
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
         </ion-col>
         
       </ion-row>
@@ -27,6 +45,7 @@
       <ion-row class="ion-align-items-center">
         <ion-col style="display: flex; text-align: center; align-items: center;" size="4">
           <!-- Nombre del equipo local -->
+<<<<<<< HEAD
           <h2 class="name princ">{{partido.equipo1}}</h2>
         </ion-col>
         <ion-col style="display: flex; text-align: center;" size="4" class="ion-text-center">
@@ -36,6 +55,17 @@
         <ion-col style="display: flex; text-align: center;" size="4">
           <!-- Nombre del equipo visitante -->
           <h2 class="name second">{{partido.equipo2}}</h2>
+=======
+          <h2 class="name princ">Nombre</h2>
+        </ion-col>
+        <ion-col style="display: flex; text-align: center;" size="4" class="ion-text-center">
+          <!-- Resultado final -->
+          <h2 class="name">xxx - xxx</h2>
+        </ion-col>
+        <ion-col style="display: flex; text-align: center;" size="4">
+          <!-- Nombre del equipo visitante -->
+          <h2 class="name">Nombre 2</h2>
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
         </ion-col>
       </ion-row>
 
@@ -43,7 +73,11 @@
         <ion-col style="height: 2rem;" size="12" class="ion-text-center">
 
 
+<<<<<<< HEAD
         <button  routerLink="/input-results-matches-vol-adm"  style="background-color: rgba(255, 255, 255, 0); width: auto;">
+=======
+        <button  routerLink="/input-results-matches-vol-adm" (click)="onButtonClick()" [disabled]="isButton2Disabled" style="background-color: rgba(255, 255, 255, 0); width: auto;">
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
           <ion-icon size="large" name="medal"></ion-icon>
         </button>
 
@@ -52,17 +86,30 @@
 
     </ion-grid>
   </ion-item>
+<<<<<<< HEAD
 
 </ion-list>
 <div class="add">
   <ion-fab>
     <ion-fab-button color="success" routerLink="/create-volley-match-adm" >
+=======
+ 
+</ion-list>
+
+<div class="add">
+  <ion-fab>
+    <ion-fab-button color="danger" routerLink="/create-volley-match-adm"  >
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   </div>
 
 
+<<<<<<< HEAD
 
 </ion-content>
 
+=======
+</ion-content>
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

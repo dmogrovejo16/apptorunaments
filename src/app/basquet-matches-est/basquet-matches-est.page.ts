@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
+=======
+import { Component, OnInit } from '@angular/core';
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 @Component({
   selector: 'app-basquet-matches-est',
   templateUrl: './basquet-matches-est.page.html',
   styleUrls: ['./basquet-matches-est.page.scss'],
 })
 export class BasquetMatchesEstPage implements OnInit {
+<<<<<<< HEAD
     isButton1Disabled: boolean;
     isButton2Disabled: boolean=true;
   nombreTorneo:any;
@@ -75,3 +81,12 @@ export class BasquetMatchesEstPage implements OnInit {
   
   }
   
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

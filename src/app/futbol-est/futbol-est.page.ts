@@ -24,6 +24,10 @@ export class FutbolEstPage implements OnInit {
       console.log(res);
       this.torneos=res;
         },(error: any)=>{ 
+<<<<<<< HEAD
+=======
+            alert('ERROR');
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
             console.log("ERROR ===", error);
           })
   }

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-volley-matches-est',
@@ -9,6 +13,7 @@ import { ApiService } from '../api.service';
 })
 export class VolleyMatchesEstPage implements OnInit {
 
+<<<<<<< HEAD
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
 nombreTorneo:any;
@@ -78,3 +83,11 @@ console.log(this.nombreTorneo);
 
 }
 
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

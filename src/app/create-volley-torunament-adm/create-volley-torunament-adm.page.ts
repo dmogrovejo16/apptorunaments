@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ApiService } from '../api.service';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-create-volley-torunament-adm',
@@ -11,6 +14,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 })
 export class CreateVolleyTorunamentAdmPage implements OnInit {
 
+<<<<<<< HEAD
   name: string = '';
   fechIni: string = '';
   fechFin: string = '';
@@ -18,10 +22,14 @@ export class CreateVolleyTorunamentAdmPage implements OnInit {
   id: string = localStorage.getItem("id")!;
 
   constructor(private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { }
+=======
+  constructor() { }
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
 
 
   addTournament(){
@@ -102,4 +110,6 @@ async presentToastBad(message: string) {
   toast.present();
 }
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }

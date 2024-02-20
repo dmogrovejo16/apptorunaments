@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import { Component,ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 
+=======
+import { Component, ElementRef, OnInit } from '@angular/core';
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-basquet-matches-third-adm',
@@ -11,6 +15,7 @@ import { ApiService } from '../api.service';
 export class BasquetMatchesThirdAdmPage implements OnInit {
   isButton1Disabled: boolean;
   isButton2Disabled: boolean=true;
+<<<<<<< HEAD
   nombreTorneo:any;
   id: any;
   Eq1: any;
@@ -31,6 +36,15 @@ export class BasquetMatchesThirdAdmPage implements OnInit {
           })
 
 
+=======
+
+  constructor(private el: ElementRef) {
+
+    this.isButton1Disabled=this.isButton2Disabled;
+   }
+
+  ngOnInit() {
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
     const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
 
         elementosConClase.forEach((nodo: Node) => {
@@ -59,6 +73,7 @@ export class BasquetMatchesThirdAdmPage implements OnInit {
 
           }
         });
+<<<<<<< HEAD
   }
 
   enviarID(id: any, Eq1:any, Eq2:any){
@@ -83,3 +98,13 @@ export class BasquetMatchesThirdAdmPage implements OnInit {
 
 }
 
+=======
+
+  }
+
+  onButtonClick() {
+    
+  }
+
+}
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

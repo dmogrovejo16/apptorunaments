@@ -20,6 +20,7 @@
 
     
     <form action="" class="form" method="post">
+<<<<<<< HEAD
       <label class="text" for="torname"  >Nombre del Torneo:</label>
       <input type="text" id="torname" [(ngModel)]="name" name="name" required>
       <hr>
@@ -32,6 +33,28 @@
  
       <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
       <input routerLink="/basquet-adm" class="reg" type="submit" value="Cancelar">
+=======
+      <label class="text" for="torname">Nombre del Torneo:</label>
+      <input type="text" id="torname" name="torneoName" required>
+      <hr>
+      <label class="text"  for="fechIn">Fecha de inicio:</label>
+      <input type="date" id="fechaInicio" name="fechIn" required>
+      <hr>
+      <label class="text"  for="password">Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      <hr>
+      <label class="text" id="grades"  for="level">Nivel:</label>
+      <select id="gradesOp">
+        <option   disabled selected>Selecciona el nivel del torneo:</option>
+        <option value="1E1" class="grades" >1ro Bachillerato</option>
+        <option value="1E2" class="grades" >2do Bachillerato</option>
+        <option value="1A1" class="grades" >3ro Bachillerato</option>
+
+      </select>
+      <hr>
+      <ion-button shape="round" class="logout" color="success"> Aceptar<ion-icon size="large" name="checkmark-circle-outline"></ion-icon></ion-button>
+      <ion-button routerLink="/basquet-adm" shape="round" class="infor" color="danger"> Cancelar <ion-icon size="large" name="close-circle-outline"></ion-icon></ion-button>
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       
 
 

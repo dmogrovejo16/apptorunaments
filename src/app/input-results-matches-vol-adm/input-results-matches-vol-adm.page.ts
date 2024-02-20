@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-input-results-matches-vol-adm',
@@ -11,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InputResultsMatchesVolAdmPage implements OnInit {
 
+<<<<<<< HEAD
   id: any;
   Eq1:any;
   Eq2:any;
@@ -78,4 +82,11 @@ async presentToastBad(message: string) {
   toast.present();
 }
 
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }

@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./profile-est.page.scss'],
 })
 export class ProfileEstPage implements OnInit {
+<<<<<<< HEAD
   curso:any;
 
   esp: string = " ";
@@ -17,6 +18,12 @@ export class ProfileEstPage implements OnInit {
   nombreCompleto:any;
   apellido: string = localStorage.getItem("Last Name")!;
   apellidoCapitalizado: string = this.apellido.charAt(0).toUpperCase()  + this.apellido.slice(0, -1);
+=======
+  esp: string = " ";
+  nombreCapitalizado: string = localStorage.getItem("Name")! + " " +localStorage.getItem("Last Name")!;
+  email: string| null = localStorage.getItem("Email");
+  
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
   constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) { }
 
  
@@ -24,8 +31,12 @@ export class ProfileEstPage implements OnInit {
 
 
   ngOnInit() {
+<<<<<<< HEAD
     this.nombreCompleto=this.nombreCapitalizado+" "+this.apellidoCapitalizado
     this.curso=localStorage.getItem("curso");
+=======
+   
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 }
 

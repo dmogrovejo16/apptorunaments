@@ -9,9 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 <ion-content >
+<<<<<<< HEAD
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+=======
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 <div class="circle"></div>
 <div class="circle1"></div>
 <div class="circle2"></div>
@@ -23,6 +27,7 @@
   <div class="imagen">
     <img src="https://cdni.iconscout.com/illustration/premium/thumb/volleyball-3354972-2802291.png?f=webp" alt="">
   </div>
+<<<<<<< HEAD
   <div class="tour">
 
     <ion-button *ngFor="let torneo of torneos" (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-voll-adm" color="danger" name="nombreT"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled">
@@ -46,3 +51,20 @@
    
    </ion-content>
    
+=======
+<div class="tour">
+ <ion-button routerLink="/levels-tournaments-voll-adm" color="danger" class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> <div class="torneos_one"><div class="txt">Torneo 1</div></div></ion-button>
+ <ion-button color="tertiary"  routerLink="/create-volley-torunament-adm" [disabled]="isButton11Disabled" shape="round" class="uno"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
+
+ <ion-button color="danger" class="torneo" shape="round"  (click)="onButtonClick()" [disabled]="isButton2Disabled"><div class="torneos_two"><div class="txt">Torneo 2</div></div></ion-button>
+ <ion-button routerLink="/create-volley-torunament-adm" color="tertiary" [disabled]="isButton21Disabled" shape="round" class="dos"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
+
+ <ion-button color="danger" class="torneo" shape="round"  (click)="onButtonClick()" [disabled]="isButton3Disabled"><div class="torneos_three"><div class="txt">Torneo 3</div></div></ion-button>
+ <ion-button routerLink="/create-volley-torunament-adm" color="tertiary" [disabled]="isButton31Disabled" shape="round" class="tres"><ion-icon size="large" name="pencil-outline"></ion-icon></ion-button>
+
+</div>
+
+</div>
+
+</ion-content>
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d

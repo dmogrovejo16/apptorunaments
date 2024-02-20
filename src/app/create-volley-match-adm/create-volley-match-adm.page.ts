@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 @Component({
   selector: 'app-create-volley-match-adm',
@@ -10,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-volley-match-adm.page.scss'],
 })
 export class CreateVolleyMatchAdmPage implements OnInit {
+<<<<<<< HEAD
   
   fecha:string="";
   hora: string="";
@@ -24,12 +28,21 @@ export class CreateVolleyMatchAdmPage implements OnInit {
   colors: string[] = ["1E1", "1E2", "1A1", "1A2", "1B1", "1B2","1C1","1C2", "1D1", "1D2","1F1","1F2","1F3",
   "2E1", "2E2", "2A1", "2A2", "2B1","2B2","2C1","2C2", "2D1", "2D2","2F1","2F2","2F3",
   "3E1", "3E2", "3A1", "3A2", "3B1","3B2","3C1","3C2", "3D1", "3D2","3F1","3F2","3F3"];
+=======
+  colors: string[] = ["1E1", "1E2", "1A1", "1A2", "1B1","1C1","1C2", "1D1", "1D2","1F1","1F2","1F3",
+  "2E1", "2E2", "2A1", "2A2", "2B1","2C1","2C2", "2D1", "2D2","2F1","2F2","2F3",
+  "3E1", "3E2", "3A1", "3A2", "3B1","3C1","3C2", "3D1", "3D2","3F1","3F2","3F3"];
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
   selectedColor: string = "";
   selectedTeam: string="";
   searchTerm: string = "";
   
   filteredColors: string[] = this.colors;
+<<<<<<< HEAD
   constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { }
+=======
+  constructor() { }
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
   ngOnInit() {
   }
@@ -39,6 +52,7 @@ export class CreateVolleyMatchAdmPage implements OnInit {
    
   }
 
+<<<<<<< HEAD
   async presentToastGood(message: string) {
     const toast = await this.toastController.create({
       message: message,
@@ -118,4 +132,11 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
 
 }
 
+=======
+  mostrar(){
+    console.log("2",this.selectedTeam);
+    console.log("1",this.selectedColor);
+  }
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 }

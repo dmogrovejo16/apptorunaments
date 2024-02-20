@@ -29,6 +29,7 @@ this.headers.append('Access-Control-Allow-Origin', '*');
             return this.http.post('http://localhost/updateStudent.php/', data);
               }
 
+<<<<<<< HEAD
               classStudent(data: { curso: any;  id:any;}){
                 return this.http.post('http://localhost/classStudent.php/', data);
                   }
@@ -37,6 +38,8 @@ this.headers.append('Access-Control-Allow-Origin', '*');
                     return this.http.post('http://localhost/areaAdministrator.php/', data);
                       }
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       getStudents(){
         return this.http.get('http://localhost/getStudents.php/');
 
@@ -66,10 +69,13 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.delete('http://localhost/delete.php?email='+email);
       }
 
+<<<<<<< HEAD
       deleteTournament(id: any){
         return this.http.delete('http://localhost/deleteTournament.php?id='+id);
       }
 
+=======
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
       addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string;  }){
         return this.http.post('http://localhost/createTorunament.php/', data);
       }

@@ -13,7 +13,11 @@ nombreTorneo:any;
 id: any;
 Eq1: any;
 Eq2: any;
+<<<<<<< HEAD
 partidos: any[] = [];
+=======
+  partidos: any[] = [];
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
   constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { 
 
@@ -23,6 +27,7 @@ partidos: any[] = [];
 
   ngOnInit() {
 
+<<<<<<< HEAD
     this.nombreTorneo = localStorage.getItem("NombreTorneo")?.toUpperCase();
     
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
@@ -34,6 +39,14 @@ this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombre
 console.log(this.partidos);
 
      
+=======
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
+
+    this._apiService.getMatchesFirst().subscribe((res:any)=>{
+      console.log(res);
+      this.partidos=res;
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
         },(error: any)=>{ 
             alert('ERROR');
             console.log("ERROR ===", error);

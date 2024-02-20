@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
+=======
+import { Component,ElementRef, OnInit } from '@angular/core';
+
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 @Component({
   selector: 'app-basquet-matches-adm',
   templateUrl: './basquet-matches-adm.page.html',
   styleUrls: ['./basquet-matches-adm.page.scss'],
 })
 export class BasquetMatchesAdmPage implements OnInit {
+<<<<<<< HEAD
 
   nombreTorneo:any;
   id: any;
@@ -32,6 +38,18 @@ export class BasquetMatchesAdmPage implements OnInit {
 
 
         const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
+=======
+  isButton1Disabled: boolean;
+  isButton2Disabled: boolean=true;
+
+  constructor(private el: ElementRef) {
+
+    this.isButton1Disabled=this.isButton2Disabled;
+   }
+
+  ngOnInit() {
+    const elementosConClase: NodeList = this.el.nativeElement.querySelectorAll('.princ');
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
         elementosConClase.forEach((nodo: Node) => {
           // Verifica si el nodo es un elemento HTMLElement
@@ -46,9 +64,21 @@ export class BasquetMatchesAdmPage implements OnInit {
             // Ahora puedes hacer lo que quieras con el texto, por ejemplo, imprimirlo en la consola
             console.log('Texto dentro del div:', textoDelDiv);
 
+<<<<<<< HEAD
         
 
 
+=======
+            if(textoDelDiv=="Nombre 1"){
+              this.isButton1Disabled=false;
+              this.isButton2Disabled=true;
+                  }
+
+                  if(textoDelDiv!="Nombre 1"){
+                    this.isButton1Disabled=false;
+                    this.isButton2Disabled=false;
+                        }
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
 
 
           }
@@ -56,6 +86,7 @@ export class BasquetMatchesAdmPage implements OnInit {
 
   }
 
+<<<<<<< HEAD
   enviarID(id: any, Eq1:any, Eq2:any){
 this.id=id;
 this.Eq1=Eq1;
@@ -80,3 +111,10 @@ localStorage.setItem("Equipo2",this.Eq2);
 
 }
 
+=======
+  onButtonClick() {
+    
+  }
+
+}
+>>>>>>> 06e10c9414a3eb8d40a49f06ec26724be12da97d
